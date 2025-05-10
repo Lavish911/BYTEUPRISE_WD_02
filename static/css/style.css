@@ -1,0 +1,34 @@
+/* Additional custom styles */
+.weather-icon-container {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+/* Focus styles for the search input */
+#cityInput:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  border-color: #86b7fe;
+}
+
+/* Make cards slightly translucent for a modern look */
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  h1.card-title {
+    font-size: 1.75rem;
+  }
+  
+  #temperature {
+    font-size: 2.5rem;
+  }
+}

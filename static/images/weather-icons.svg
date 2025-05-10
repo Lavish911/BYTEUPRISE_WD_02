@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- This SVG contains icon definitions that could be used instead of Font Awesome -->
+  <!-- We're using Font Awesome CDN in this project, but this file is included to demonstrate SVG icon capability -->
+  
+  <!-- Sun icon -->
+  <symbol id="icon-sun" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+    <path d="M12 2V4M12 20V22M4 12H2M6.34 6.34L4.93 4.93M17.66 6.34L19.07 4.93M22 12H20M17.66 17.66L19.07 19.07M6.34 17.66L4.93 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  
+  <!-- Cloud icon -->
+  <symbol id="icon-cloud" viewBox="0 0 24 24">
+    <path d="M18 10H16.74C16.3659 8.551 15.5928 7.23599 14.5086 6.2193C13.4245 5.20261 12.0727 4.53799 10.6069 4.31168C9.14112 4.08537 7.64279 4.3068 6.30857 4.94412C4.97435 5.58144 3.86448 6.60347 3.12992 7.8736C2.39535 9.14373 2.07431 10.6004 2.2131 12.0506C2.35189 13.5008 2.94391 14.8742 3.90704 15.9732C4.87016 17.0722 6.15559 17.8458 7.58809 18.1977C9.0206 18.5495 10.5307 18.4649 11.91 17.955" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M16 10C16.7956 10 17.5587 10.3161 18.1213 10.8787C18.6839 11.4413 19 12.2044 19 13C19 13.7956 18.6839 14.5587 18.1213 15.1213C17.5587 15.6839 16.7956 16 16 16H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  
+  <!-- Rain icon -->
+  <symbol id="icon-rain" viewBox="0 0 24 24">
+    <path d="M16 13V21M8 13V21M12 15V23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M20 13C21.1046 13 22 12.1046 22 11C22 9.89543 21.1046 9 20 9M20 9C20 6.79086 18.2091 5 16 5C13.7909 5 12 6.79086 12 9M20 9C20 9 19.9999 7 17.5 5.5C15.5 4.5 13 5 12 9M12 9C12 9 9.99999 9.99999 10 13H20C20 13 20 11 20 9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  
+  <!-- Thunder icon -->
+  <symbol id="icon-thunder" viewBox="0 0 24 24">
+    <path d="M13 1L6 14H12L11 23L18 10H12L13 1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  
+  <!-- Snow icon -->
+  <symbol id="icon-snow" viewBox="0 0 24 24">
+    <path d="M12 2V22M12 6L16 2M12 6L8 2M12 18L16 22M12 18L8 22M4 12H20M7 15L17 9M7 9L17 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  
+  <!-- Wind icon -->
+  <symbol id="icon-wind" viewBox="0 0 24 24">
+    <path d="M9.59 4.59C9.59 3.59 8.77 2.81 7.82 2.81C6.87 2.81 6.05 3.59 6.05 4.59C6.05 5.59 6.87 6.36 7.82 6.36H17.86M3.5 9.5H15.27C16.22 9.5 17.09 10.14 17.09 11.14C17.09 12.14 16.22 12.77 15.27 12.77C14.32 12.77 13.45 12.14 13.45 11.14M10.91 16.91C10.91 15.91 11.78 15.09 12.73 15.09C13.68 15.09 14.55 15.91 14.55 16.91C14.55 17.91 13.68 18.73 12.73 18.73H2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>

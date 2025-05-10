@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color Splash Landing Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/color_splash.css') }}" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/color-splash-logo.svg') }}" alt="Color Splash Logo">
+      </div>
+      <h1>Color Splash</h1>
+    </div>
+    <nav>
+      <a href="{{ url_for('color_splash') }}">Home</a>
+      <a href="#features">Features</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="{{ url_for('weather_app') }}">Weather App</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Unleash Your Creative Energy</h2>
+      <p>Design. Dream. Develop. Dive into the rainbow.</p>
+      <button onclick="window.location.href='#features'">Get Started <i class="fas fa-arrow-right"></i></button>
+    </div>
+    <div class="floating-elements">
+      <div class="floating-item" id="float1"></div>
+      <div class="floating-item" id="float2"></div>
+      <div class="floating-item" id="float3"></div>
+      <div class="floating-item" id="float4"></div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <h2 class="section-title">Our Features</h2>
+    <div class="features-container">
+      <div class="box">
+        <div class="box-icon"><i class="fas fa-palette fa-3x"></i></div>
+        <h3>Bold Colors</h3>
+        <p>Vibrant palettes that make your designs pop and capture attention instantly.</p>
+      </div>
+      <div class="box">
+        <div class="box-icon"><i class="fas fa-lightbulb fa-3x"></i></div>
+        <h3>Creative Ideas</h3>
+        <p>Innovative concepts that push boundaries and inspire new possibilities.</p>
+      </div>
+      <div class="box">
+        <div class="box-icon"><i class="fas fa-bolt fa-3x"></i></div>
+        <h3>Fast Execution</h3>
+        <p>Rapid implementation that brings your vision to life without delays.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <h2 class="section-title">Our Work</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="{{ url_for('static', filename='images/portfolio1.svg') }}" alt="Portfolio item 1">
+        <div class="portfolio-overlay">
+          <h3>Colorful Web Design</h3>
+          <p>Modern and vibrant web interfaces</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="{{ url_for('static', filename='images/portfolio2.svg') }}" alt="Portfolio item 2">
+        <div class="portfolio-overlay">
+          <h3>UI Gradients</h3>
+          <p>Smooth and eye-catching color transitions</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="{{ url_for('static', filename='images/portfolio3.svg') }}" alt="Portfolio item 3">
+        <div class="portfolio-overlay">
+          <h3>3D Design Elements</h3>
+          <p>Depth and dimension for modern applications</p>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <img src="{{ url_for('static', filename='images/portfolio4.svg') }}" alt="Portfolio item 4">
+        <div class="portfolio-overlay">
+          <h3>Interactive Experiences</h3>
+          <p>Engaging and responsive digital interactions</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-content">
+      <h2 class="section-title">About Color Splash</h2>
+      <p>Color Splash is a creative platform designed to inspire and empower designers, developers, and dreamers. Our mission is to bring color and creativity to the digital world.</p>
+      <p>We believe in the power of vibrant design to transform user experiences and make digital products more engaging and intuitive.</p>
+      <div class="cta-container">
+        <p>Ready to add some color to your project? Check out our <a href="{{ url_for('weather_app') }}">Weather App</a> to see what we can do!</p>
+        <button class="cta-button" onclick="window.location.href='{{ url_for('weather_app') }}'">View Weather App Demo <i class="fas fa-cloud-sun"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="{{ url_for('static', filename='images/color-splash-logo-white.svg') }}" alt="Color Splash Logo">
+        <h3>Color Splash</h3>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="{{ url_for('weather_app') }}">Weather App</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Connect With Us</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Color Splash. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript -->
+  <script src="{{ url_for('static', filename='js/color_splash.js') }}"></script>
+</body>
+</html>

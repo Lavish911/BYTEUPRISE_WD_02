@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <!-- Bootstrap CSS (Replit-themed) -->
+  <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <a href="{{ url_for('color_splash') }}" class="btn btn-outline-primary btn-sm">
+                <i class="fas fa-arrow-left"></i> Back to Color Splash
+              </a>
+              <h1 class="card-title text-center mb-0">Weather App</h1>
+              <div style="width: 120px;"></div> <!-- For balance -->
+            </div>
+            
+            <div class="mb-4">
+              <div class="input-group">
+                <input type="text" id="cityInput" class="form-control" placeholder="Enter city name" aria-label="City name">
+                <button class="btn btn-primary" type="button" id="searchButton">
+                  <i class="fas fa-search"></i> Search
+                </button>
+              </div>
+              <div class="form-text">Enter a city name to get the current weather information</div>
+            </div>
+            
+            <!-- Loading indicator -->
+            <div id="loadingIndicator" class="text-center d-none">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <p class="mt-2">Fetching weather data...</p>
+            </div>
+            
+            <!-- Error message container -->
+            <div id="errorContainer" class="alert alert-danger d-none" role="alert"></div>
+            
+            <!-- Weather result container -->
+            <div id="weatherContainer" class="d-none">
+              <div class="card bg-secondary bg-opacity-10">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                      <h2 id="cityName" class="mb-0">City Name</h2>
+                      <p id="dateTime" class="text-muted">Date and Time</p>
+                      <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+                        <h3 id="temperature" class="display-4 mb-0">0°C</h3>
+                        <div class="ms-3">
+                          <span id="feelsLike" class="d-block">Feels like: 0°C</span>
+                          <span id="minMaxTemp" class="d-block">Min: 0°C / Max: 0°C</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                      <div class="weather-icon-container">
+                        <i id="weatherIcon" class="fas fa-question fa-4x mb-2"></i>
+                      </div>
+                      <h4 id="weatherDescription" class="mb-0">Weather Description</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row mt-4">
+                <div class="col-sm-6 col-md-3 mb-3">
+                  <div class="card h-100 bg-secondary bg-opacity-10">
+                    <div class="card-body text-center">
+                      <i class="fas fa-wind fa-2x mb-2"></i>
+                      <h5>Wind</h5>
+                      <p id="windSpeed" class="mb-0">0 m/s</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-3 mb-3">
+                  <div class="card h-100 bg-secondary bg-opacity-10">
+                    <div class="card-body text-center">
+                      <i class="fas fa-tint fa-2x mb-2"></i>
+                      <h5>Humidity</h5>
+                      <p id="humidity" class="mb-0">0%</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-3 mb-3">
+                  <div class="card h-100 bg-secondary bg-opacity-10">
+                    <div class="card-body text-center">
+                      <i class="fas fa-compress-alt fa-2x mb-2"></i>
+                      <h5>Pressure</h5>
+                      <p id="pressure" class="mb-0">0 hPa</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-3 mb-3">
+                  <div class="card h-100 bg-secondary bg-opacity-10">
+                    <div class="card-body text-center">
+                      <i class="fas fa-eye fa-2x mb-2"></i>
+                      <h5>Visibility</h5>
+                      <p id="visibility" class="mb-0">0 km</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card mt-4 bg-secondary bg-opacity-10">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-4 text-center mb-3 mb-md-0">
+                      <i class="fas fa-sun fa-2x mb-2"></i>
+                      <h5>Sunrise</h5>
+                      <p id="sunrise" class="mb-0">00:00 AM</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4 text-center mb-3 mb-md-0">
+                      <i class="fas fa-moon fa-2x mb-2"></i>
+                      <h5>Sunset</h5>
+                      <p id="sunset" class="mb-0">00:00 PM</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                      <i class="fas fa-map-marker-alt fa-2x mb-2"></i>
+                      <h5>Coordinates</h5>
+                      <p id="coordinates" class="mb-0">Lat: 0, Lon: 0</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Recent searches section -->
+            <div class="mt-4">
+              <h4 class="mb-3">Recent Searches</h4>
+              <div id="recentSearches">
+                {% if recent_searches %}
+                  <div class="list-group">
+                    {% for search in recent_searches %}
+                      <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="searchCity('{{ search.city }}')">
+                        <div>
+                          <strong>{{ search.city }}{% if search.country_code %}, {{ search.country_code }}{% endif %}</strong>
+                          <small class="d-block text-muted">{{ search.search_time }}</small>
+                        </div>
+                        <div>
+                          {% if search.temperature %}
+                            <span class="badge bg-info rounded-pill">{{ search.temperature|round|int }}°C</span>
+                          {% endif %}
+                        </div>
+                      </button>
+                    {% endfor %}
+                  </div>
+                {% else %}
+                  <p class="text-muted">No recent searches yet.</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

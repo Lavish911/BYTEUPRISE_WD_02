@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9a9e" />
+      <stop offset="100%" stop-color="#fad0c4" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a18cd1" />
+      <stop offset="100%" stop-color="#fbc2eb" />
+    </linearGradient>
+    <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#84fab0" />
+      <stop offset="100%" stop-color="#8fd3f4" />
+    </linearGradient>
+    <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5576c" />
+      <stop offset="100%" stop-color="#f093fb" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="#2d3436" />
+  
+  <!-- UI Gradient Cards -->
+  <g>
+    <!-- Card 1 -->
+    <rect x="50" y="50" width="200" height="120" rx="10" fill="url(#gradient1)" />
+    <text x="150" y="110" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Sunset Blush</text>
+    
+    <!-- Card 2 -->
+    <rect x="350" y="50" width="200" height="120" rx="10" fill="url(#gradient2)" />
+    <text x="450" y="110" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Lavender Dusk</text>
+    
+    <!-- Card 3 -->
+    <rect x="50" y="230" width="200" height="120" rx="10" fill="url(#gradient3)" />
+    <text x="150" y="290" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Mint Aqua</text>
+    
+    <!-- Card 4 -->
+    <rect x="350" y="230" width="200" height="120" rx="10" fill="url(#gradient4)" />
+    <text x="450" y="290" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Berry Fusion</text>
+  </g>
+  
+  <!-- Connecting lines to illustrate UI design -->
+  <line x1="150" y1="190" x2="150" y2="210" stroke="white" stroke-width="2" stroke-dasharray="5,5" />
+  <line x1="450" y1="190" x2="450" y2="210" stroke="white" stroke-width="2" stroke-dasharray="5,5" />
+  <line x1="270" y1="110" x2="330" y2="110" stroke="white" stroke-width="2" stroke-dasharray="5,5" />
+  <line x1="270" y1="290" x2="330" y2="290" stroke="white" stroke-width="2" stroke-dasharray="5,5" />
+  
+  <!-- Center element connecting all gradients -->
+  <circle cx="300" cy="200" r="30" fill="white" />
+  <text x="300" y="205" font-family="Arial" font-size="12" fill="#2d3436" text-anchor="middle">UI Gradients</text>
+</svg>
